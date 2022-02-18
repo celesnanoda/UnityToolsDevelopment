@@ -11,6 +11,14 @@ public class ExplosiveBarrelManager : MonoBehaviour
 {
     public static List<ExplosiveBarrel> explosiveBarrels = new List<ExplosiveBarrel>();
 
+    public static void UpdateAllBarrelColors()
+    {
+        foreach( var barrel in explosiveBarrels )
+        {
+            barrel.TryApplyColor();
+        }
+    }
+
 #if UNITY_EDITOR
     private void OnDrawGizmosSelected()
     {
@@ -20,7 +28,7 @@ public class ExplosiveBarrelManager : MonoBehaviour
         foreach( var barrel in explosiveBarrels )
         {
 
-            if (barrel.barrelType == null) continue ;
+            if ( barrel.barrelType == null ) continue ;
 
             Vector3 managerPos = transform.position;
             Vector3 barrelPos = barrel.transform.position;

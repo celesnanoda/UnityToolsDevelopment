@@ -21,7 +21,7 @@ public class ExplosiveBarrel : MonoBehaviour
         }
     }
 
-    void TryApplyColor()
+    public void TryApplyColor()
     {
         if (barrelType == null) return;
 
@@ -37,6 +37,13 @@ public class ExplosiveBarrel : MonoBehaviour
     {
         TryApplyColor();
         ExplosiveBarrelManager.explosiveBarrels.Add(this);
+    }
+
+    
+    [ContextMenu("Do Something")] // Right Click on Inspector
+    public void DoSomething()
+    {
+
     }
 
     private void OnDisable() => ExplosiveBarrelManager.explosiveBarrels.Remove( this );
