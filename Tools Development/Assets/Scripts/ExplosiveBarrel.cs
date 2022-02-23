@@ -12,6 +12,7 @@ public class ExplosiveBarrel : MonoBehaviour
     static readonly int shPropColor = Shader.PropertyToID("_Color");
 
     MaterialPropertyBlock mpb;
+
     public MaterialPropertyBlock Mpb {
         get
         {
